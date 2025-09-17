@@ -1,10 +1,10 @@
 const API_URL = "https://api.themoviedb.org/3/"
 const API_KEY = "fdf620cfb9f015c2dd4eb40bd67660ee"
 
-async function apiFetch(endpoint, method = "GET", body = null, language = "es-ES") {
+async function apiFetch(endpoint, method = "GET", body = null, language = "en-US") {
     const headers = {
         "accept": "application/json;charset=utf-8",
-        "Authorization": API_KEY
+        // "Authorization": API_KEY
     }
 
     const options = {
@@ -16,7 +16,7 @@ async function apiFetch(endpoint, method = "GET", body = null, language = "es-ES
         options.body = JSON.stringify(body)
     }
 
-    let url = `${API_URL}${endpoint}${endpoint.includes('?') ? '&' : '?'}api_key=${API_KEY}&language=es-ES`
+    let url = `${API_URL}${endpoint}${endpoint.includes('?') ? '&' : '?'}api_key=${API_KEY}&language=${language}`
 
     const response = await fetch(url, options)
 
