@@ -16,7 +16,8 @@ async function apiFetch(endpoint, method = "GET", body = null, language = "es-ES
         options.body = JSON.stringify(body)
     }
 
-    let url = `${API_URL}${endpoint}${endpoint.includes('?') ? '&' : '?'}language=en-EN`
+    let url = `${API_URL}${endpoint}${endpoint.includes('?') ? '&' : '?'}api_key=${API_KEY}&language=es-ES`
+
     const response = await fetch(url, options)
 
     if (!response.ok) {
