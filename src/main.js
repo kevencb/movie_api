@@ -1,4 +1,5 @@
 const API_URL = "https://api.themoviedb.org/3/"
+const API_KEY = "fdf620cfb9f015c2dd4eb40bd67660ee"
 
 async function apiFetch(endpoint, method = "GET", body = null, language = "es-ES") {
     const headers = {
